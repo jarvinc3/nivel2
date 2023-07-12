@@ -1,0 +1,98 @@
+ body{
+    margin: 2rem 4rem;
+     padding: 0;
+     font-family: 'Montserrat', sans-serif;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 15px;
+}
+
+section.sectionSearch {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    border-color: #F2F2F2;
+    box-shadow: 0px 2px 9px #F2F2F2;
+}
+    
+.location {
+    font-family: 'Mulish', sans-serif;
+    display: flex;
+    align-items: center;
+    height: 10px;
+    font-size: 10px;
+    padding: 0 0 0 12px;
+    cursor: none;
+}
+
+.hr1 {
+    width: 0.6px;
+    border: 1px;
+    height: 40px;
+    background-color: #F2F2F2;
+}
+
+input {
+    border-style: none;
+    width: 80px;
+}
+
+input[placeholder] {
+    color: #BDBDBD;
+    font-size: 10px;
+    font-family: 'Mulish', sans-serif;
+}
+
+input[type="text"]:focus {
+    outline: none;
+  }
+
+.hr2 {
+    margin: 0;
+    width: 0.6px;
+    border: 1px;
+    height: 40px;
+    background-color: #F2F2F2;
+}
+
+button {
+    width: 40px;
+    border-style: none;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    color: #EB5757;
+    height: 25px;
+    cursor: pointer;
+}
+
+#lupa {
+    font-size: large;
+    font-weight: 700;
+}
+
+.divStay {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    height: 100px;
+}
+
+.stayText {
+    font-size: 18px;
+}
