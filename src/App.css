@@ -1,10 +1,11 @@
  body{
-    margin: 2rem 4rem;
+    margin: 1rem 4rem;
      padding: 0;
      font-family: 'Montserrat', sans-serif;
     
 }
 
+/* barra de navegacion y logo */
 nav {
     display: flex;
     justify-content: space-between;
@@ -16,14 +17,14 @@ nav {
 }
 
 .logo {
-    height: 15px;
+    height: 12px;
 }
 
 section.sectionSearch {
     display: flex;
     align-items: center;
-    height: 40px;
-    width: 250px;
+    height: 35px;
+    width: 220px;
     border-radius: 10px;
     border-color: #F2F2F2;
     box-shadow: 0px 2px 9px #F2F2F2;
@@ -48,7 +49,7 @@ section.sectionSearch {
 
 input {
     border-style: none;
-    width: 80px;
+    width: 70px;
 }
 
 input[placeholder] {
@@ -65,12 +66,12 @@ input[type="text"]:focus {
     margin: 0;
     width: 0.6px;
     border: 1px;
-    height: 40px;
+    height: 35px;
     background-color: #F2F2F2;
 }
 
 button {
-    width: 40px;
+    width: 30px;
     border-style: none;
     background-color: white;
     border-radius: 0 10px 10px 0;
@@ -84,15 +85,79 @@ button {
     font-weight: 700;
 }
 
+/* seccion stay */
 .divStay {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     height: 100px;
 }
 
 .stayText {
-    font-size: 18px;
+    font-size: 14px;
+}
+
+/* cards */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cards {
+    margin: 10px 0;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+img.photo {
+    width: 240px;
+    height: 170px;
+    border-radius: 14px;
+}
+
+.indicationsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.typeContainer {
+    display: flex;
+    align-items: center;
+}
+
+.type {
+    font-size: 9px;
+    height: 10px;
+    color: #828282;
+}
+
+.bed {
+    font-size: 9px;
+    height: 10px;
+    color: #828282;
+}
+
+.starRting {
+    display: flex;
+    align-items: center;
+}
+
+#star {
+    font-size: 16px;
+    color: #EB5757 ;
+}
+
+.rating {
+    font-size: 12px;
+    color: #4F4F4F;
+}
+
+.title {
+    font-size: 10px;
+    color: #333333;
+    margin: 0;
 }

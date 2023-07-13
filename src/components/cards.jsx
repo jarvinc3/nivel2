@@ -1,5 +1,6 @@
 
-function cards() {
+
+ const cards = () => {
     
 }
 
