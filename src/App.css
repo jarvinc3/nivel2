@@ -161,3 +161,18 @@ img.photo {
     color: #333333;
     margin: 0;
 }
+
+.superHost {
+    border-style: solid;
+    border-color: #4F4F4F;
+    border-radius: 15px;
+    color: #4F4F4F;
+    font-size: 10px;
+    height: 20px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    margin: 0 5px 0 0;
+}
