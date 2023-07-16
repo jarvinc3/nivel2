@@ -7,7 +7,8 @@ import Stays from "./components/stays";
 function App() {
   const [location, setLocation] = useState("");
   const [guests, setGuests] = useState("");
-
+  
+// funcion para que el filtro funcione en los componentes navs y cards
   const handleSearch = (location, guests) => {
     setLocation(location);
     setGuests(guests);

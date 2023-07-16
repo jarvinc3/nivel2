@@ -22,6 +22,7 @@ function Cards({ location, guests }) {
      getData();
   }, []);
 
+  // esta funcion sirve para filtrar las cards segun la informacion del nav
   const filteredData = data.filter((item) => {
     return (
       item.city.toLowerCase().includes(location.toLowerCase()) &&

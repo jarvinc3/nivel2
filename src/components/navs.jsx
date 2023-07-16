@@ -3,14 +3,17 @@ function nav({onSearch}) {
     const [Location, setLocation] = useState ("");
     const [Guests, setGuests] = useState ("");
 
+
+    // esta funcion sirve como filtro para identificar la ciudad que ingreses
     const handleLocationChange = (event) => {
         setLocation(event.target.value);
     }
-
+    // esta funcion sirve como filtro para identificar el nummero de guests que ingreses
     const handleGuestsChange = (event) => {
         setGuests(event.target.value);
     }
 
+    // esta funcion sirve para filtrar la informacion al dar click en el boton
     const handleSearch = () => {
         onSearch(Location, Guests);
     }
