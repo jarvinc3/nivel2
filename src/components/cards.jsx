@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Cards() {
+function Cards({ location, guests }) {
   // La variable data es la que va a almacenar los datos de "stays.json" y setData nos ayudará a guardar esos datos en esa variable. Es necesario que inicialicemos esa variable como un array vacío para evitar errores.
   const [data, setData] = useState([]);
 
@@ -22,8 +22,12 @@ function Cards() {
      getData();
   }, []);
 
-  // Puedes ver la variable data en consola.
-  console.log(data);
+  const filteredData = data.filter((item) => {
+    return (
+      item.city.toLowerCase().includes(location.toLowerCase()) &&
+      item.maxGuests >= guests 
+    );
+  });
 
 
 
@@ -31,7 +35,7 @@ function Cards() {
     <>
      
       <main>
-        {data.map((e, i) => {
+        {filteredData.map((e, i) => {
           return (
             <div className="cards" key={i}>
               <div className="imgContainer">

@@ -1,5 +1,21 @@
+import { useState } from "react";
+function nav({onSearch}) {
+    const [Location, setLocation] = useState ("");
+    const [Guests, setGuests] = useState ("");
 
-function nav() {
+    const handleLocationChange = (event) => {
+        setLocation(event.target.value);
+    }
+
+    const handleGuestsChange = (event) => {
+        setGuests(event.target.value);
+    }
+
+    const handleSearch = () => {
+        onSearch(Location, Guests);
+    }
+
+
     return(
         <>
         <nav>
@@ -7,13 +23,11 @@ function nav() {
                 <img className="logo" src="/src/img/logo.svg" alt=""/>
             </div>
             <section className="sectionSearch">
-                <span className="location">
-                <p>Helsinki, Finland</p>
-                </span>
+                <input className="location" type="text" placeholder=" Add city" value={Location} onChange={handleLocationChange}/>
                 <hr className="hr1" />
-                <input type="text" placeholder="Add guest"/>
+                <input className="addGuest" type="text" placeholder="Add guest" value={Guests} onChange={handleGuestsChange}/>
                 <hr className="hr2"  />
-                <button> 
+                <button onClick={handleSearch}> 
                     <span id="lupa" className="material-symbols-outlined">search</span>
                 </button>
             </section>
