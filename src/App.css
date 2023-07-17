@@ -17,13 +17,13 @@ nav {
 }
 
 .logo {
-    height: 12px;
+    height: 20px;
 }
 
 .sectionSearch {
     display: flex;
-    height: 35px;
-    width: 200px;
+    height: 55px;
+    width: 315px;
     border-radius: 10px;
     border-color: #F2F2F2;
     box-shadow: 0px 2px 9px #F2F2F2;
@@ -34,12 +34,12 @@ nav {
 .location {
     border-style: none;
     width: 58px;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 35px;
 }
 
 .location[placeholder] {
     color: #050505;
-    font-size: 10px;
+    font-size: 14px;
     font-family: 'Mulish', sans-serif;
 }
 
@@ -50,18 +50,18 @@ nav {
 .hr1 {
     width: 0.6px;
     border: 1px;
-    height: 40px;
+    height: 55px;
     background-color: #F2F2F2;
 }
 
 .addGuest {
     border-style: none;
-    width: 55px;
+    width: 77px;
 }
 
 .addGuest[placeholder] {
     color: #BDBDBD;
-    font-size: 10px;
+    font-size: 14px;
     font-family: 'Mulish', sans-serif;
 }
 
@@ -70,15 +70,15 @@ nav {
   }
 
 .hr2 {
-    margin: 0;
+    margin: 0 0 0 25px;
     width: 0.6px;
     border: 1px;
-    height: 35px;
+    height: 55px;
     background-color: #F2F2F2;
 }
 
 button {
-    width: 40px;
+    width: 55px;
     border-style: none;
     background-color: white;
     border-radius: 0 10px 10px 0;
@@ -88,7 +88,7 @@ button {
 }
 
 #lupa {
-    font-size: large;
+    font-size: x-large;
     font-weight: 700;
 }
 
@@ -98,12 +98,12 @@ button {
     align-items: flex-end;
     justify-content: space-between;
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
+    font-size: 14px;
     height: 100px;
 }
 
 .stayText {
-    font-size: 14px;
+    font-size: 24px;
 }
 
 /* cards */
@@ -116,15 +116,15 @@ main {
 
 .cards {
     margin: 10px 0;
-    width: 240px;
+    width: 390px;
     display: flex;
     flex-direction: column;
 }
 
 img.photo {
-    width: 240px;
-    height: 170px;
-    border-radius: 14px;
+    width: 390px;
+    height: 270px;
+    border-radius: 24px;
 }
 
 .indicationsContainer {
@@ -138,14 +138,14 @@ img.photo {
 }
 
 .type {
-    font-size: 9px;
-    height: 10px;
+    font-size: 14px;
+    height: 18px;
     color: #828282;
 }
 
 .bed {
-    font-size: 9px;
-    height: 10px;
+    font-size: 14px;
+    height: 18px;
     color: #828282;
 }
 
@@ -155,17 +155,17 @@ img.photo {
 }
 
 #star {
-    font-size: 16px;
+    font-size: 20px;
     color: #EB5757 ;
 }
 
 .rating {
-    font-size: 12px;
+    font-size: 15px;
     color: #4F4F4F;
 }
 
 .title {
-    font-size: 10px;
+    font-size: 15px;
     color: #333333;
     margin: 0;
 }
@@ -173,9 +173,9 @@ img.photo {
 .superHost {
     border-color: #4F4F4F;
     border-radius: 20px;
-    font-size: 9px;
-    height: 15px;
-    width: 70px;
+    font-size: 13px;
+    height: 25px;
+    width: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
