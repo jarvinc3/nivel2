@@ -1,4 +1,10 @@
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
+
+Cards.propTypes = {
+  location: PropTypes.string.isRequired,
+  guests: PropTypes.number.isRequired
+};
 
 function Cards({ location, guests }) {
   // La variable data es la que va a almacenar los datos de "stays.json" y setData nos ayudará a guardar esos datos en esa variable. Es necesario que inicialicemos esa variable como un array vacío para evitar errores.

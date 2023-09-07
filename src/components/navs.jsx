@@ -1,5 +1,11 @@
 import { useState } from "react";
-function nav({onSearch}) {
+import PropTypes from 'prop-types';
+
+Nav.propTypes = {
+  onSearch: PropTypes.func.isRequired,
+};
+
+function Nav({onSearch}) {
     const [Location, setLocation] = useState ("");
     const [Guests, setGuests] = useState ("");
 
@@ -39,4 +45,4 @@ function nav({onSearch}) {
     );
 }
 
-export default nav;
+export default Nav;
