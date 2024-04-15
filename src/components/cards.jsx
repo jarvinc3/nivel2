@@ -1,46 +1,12 @@
-import { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 Cards.propTypes = {
-  location: PropTypes.string.isRequired,
-  guests: PropTypes.number.isRequired
+  filteredData: PropTypes.array.isRequired,
 };
 
-function Cards({ location, guests }) {
-  // La variable data es la que va a almacenar los datos de "stays.json" y setData nos ayudará a guardar esos datos en esa variable. Es necesario que inicialicemos esa variable como un array vacío para evitar errores.
-  const [data, setData] = useState([]);
-
-  // Función para traer los datos de "stays.json".
-  const getData = async () => {
-    // Esta sentencia try-catch sirve para manejar los errores que se podrían generar al importar los datos de "stays.json".
-    try {
-      const res = await fetch("stays.json");
-      const resJson = await res.json();
-      // Aquí guardamos los datos de "stays.json" en la variable data.
-      setData(resJson);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  // Este Hook te va a ejecutar la función getData cada vez que la página se renderice.
-  useEffect(() => {
-     getData();
-  }, []);
-
-  // esta funcion sirve para filtrar las cards segun la informacion del nav
-  const filteredData = data.filter((item) => {
-    return (
-      item.city.toLowerCase().includes(location.toLowerCase()) &&
-      item.maxGuests >= guests 
-    );
-  });
-
-
-
+function Cards({ filteredData }) {
   return (
     <>
-     
       <main>
         {filteredData.map((e, i) => {
           return (
@@ -49,10 +15,15 @@ function Cards({ location, guests }) {
                 <img className="photo" src={e.photo} alt="" />
               </div>
               <div className="indicationsContainer">
-                <div className="typeContainer">{e.superHost && <p className="superHost">SUPER HOST</p>}<p className="type"> {e.type} </p> 
-                   {e.beds && <p className="bed"> . {e.beds} beds</p>}</div>
+                <div className="typeContainer">
+                  {e.superHost && <p className="superHost">SUPER HOST</p>}
+                  <p className="type"> {e.type} </p>
+                  {e.beds && <p className="bed"> . {e.beds} beds</p>}
+                </div>
                 <div className="starRting">
-                  <span id="star" className="material-symbols-outlined">star</span>
+                  <span id="star" className="material-symbols-outlined">
+                    star
+                  </span>
                   <p className="rating">{e.rating}</p>
                 </div>
               </div>
@@ -60,9 +31,8 @@ function Cards({ location, guests }) {
                 <h2 className="title">{e.title}</h2>
               </div>
             </div>
-          )
-          })
-        }
+          );
+        })}
       </main>
     </>
   );

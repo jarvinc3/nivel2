@@ -1,13 +1,18 @@
+import PropTypes from "prop-types";
 
-function stays() {
-    return(
-        <>
-        <div className="divStay">
-            <h1 className="stayText">Stays in Finland</h1>
-            <p>12+ stays</p>
-        </div>
-        </>
-    )
+Stays.propTypes = {
+  filteredData: PropTypes.array.isRequired,
+};
+
+function Stays({ filteredData }) {
+  return (
+    <>
+      <div className="divStay">
+        <h1 className="stayText">Stays in Finland</h1>
+        <p>{filteredData.length -2}+ stays</p>
+      </div>
+    </>
+  );
 }
 
-export default stays;
+export default Stays;
