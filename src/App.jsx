@@ -1,10 +1,10 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import Cards from "./components/Cards";
 import Stays from "./components/Stays";
 import stays from "./data/stays.json";
-import { Loader } from "./components/Loader";
+import Cards from "./components/Cards";
+import Loader from "./components/Loader";
 
 function App() {
   const [location, setLocation] = useState("");
