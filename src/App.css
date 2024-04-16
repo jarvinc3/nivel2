@@ -193,21 +193,22 @@
          cursor: pointer;
      }
 
+     .errorContent {
+        color: red;
+        font-size: 16px;
+        margin-top: 20px;
+        text-align: center;
+        width: 90%;
+     }
+
      .errorContent::before {
          content: "Please complete all fields";
-         color: red;
-         font-size: 16px;
-         margin-top: 20px;
-         text-align: center;
-         width: 90%;
      }
 
      .dpNone {
          display: none;
      }
  }
-
-
 
  .descriptionContainer {
      display: none;
@@ -251,7 +252,7 @@
 
  .location {
      border-style: none;
-     width: 58px;
+     width: 95%;
  }
 
  label {
@@ -275,7 +276,7 @@
 
  .addGuest {
      border-style: none;
-     width: 77px;
+     width: 95%;
  }
 
  .addGuest[placeholder] {

@@ -81,7 +81,7 @@ function Nav({ onSearch }) {
     <>
       <nav id="navbar" className="">
         <div className="contenedor-logo">
-          <img className="logo" src="/src/img/logo.svg" alt="" />
+          <img className="logo" src=" /logo.svg" alt="" />
         </div>
         <section className="sectionSearch">
           <div className="inputsContainer">
@@ -92,6 +92,7 @@ function Nav({ onSearch }) {
                 id="location"
                 type="text"
                 placeholder=" Add city"
+                autoComplete="off" 
                 value={Location}
                 onClick={openModal}
                 onChange={handleLocationChange}
@@ -104,6 +105,7 @@ function Nav({ onSearch }) {
                 id="guests"
                 type="text"
                 placeholder="Add guest"
+                autoComplete="off" 
                 value={Guests}
                 onClick={openModal}
                 onChange={handleGuestsChange}

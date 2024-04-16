@@ -1,8 +1,8 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import Nav from "./components/navs";
-import Cards from "./components/cards";
-import Stays from "./components/stays";
+import Nav from "./components/Nav";
+import Cards from "./components/Cards";
+import Stays from "./components/Stays";
 import stays from "./data/stays.json";
 import { Loader } from "./components/Loader";
 
@@ -37,8 +37,6 @@ function App() {
     setTimeout(() => {
       setLoading(false); 
     }, 4500);
-
-
   }, [filteredData]); 
 
   return (
