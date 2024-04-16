@@ -10,8 +10,9 @@ function Nav({ onSearch }) {
   const [Guests, setGuests] = useState("");
   const [border1, setBorder1] = useState();
   const [border2, setBorder2] = useState();
-  const [count1 , setCount1] = useState(0);
-  const [count2 , setCount2] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [error, setError] = useState(null);
 
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
@@ -22,7 +23,12 @@ function Nav({ onSearch }) {
   };
 
   const handleSearch = () => {
-    onSearch(Location, Guests);
+    if (Location === "" || Guests === "") {
+      setError(true);
+    } else {
+      onSearch(Location, Guests);
+      setError(false);
+    }
   };
 
   const openModal = () => {
@@ -31,13 +37,23 @@ function Nav({ onSearch }) {
   }
 
   const closeModal = () => {
+    if (Location === "" || Guests === "") {
+      setError(true);
+    } else {
+      const modal = document.getElementById("navbar");
+      modal.classList.remove("nav");
+    }
+  }
+
+  const closeModalV2 = () => {
     const modal = document.getElementById("navbar");
     modal.classList.remove("nav");
+    setError(false);
   }
 
   const toggleBorder1 = () => {
-      setBorder1(true);
-      setBorder2(false);
+    setBorder1(true);
+    setBorder2(false);
   }
 
   const toggleBorder2 = () => {
@@ -106,6 +122,7 @@ function Nav({ onSearch }) {
               </div>
             </div>
           </div>
+          <div className={` ${error ? 'errorContent' : 'dpNone'}`}></div>
           <div className="descriptionContainer">
             <div className={`description ${border1 ? '' : 'show'}`}>
               <ul>
@@ -136,25 +153,25 @@ function Nav({ onSearch }) {
                 <h2>Adults</h2>
                 <p>Age 13 and above</p>
                 <div className="count1">
-                  <img onClick={handleCountMinus} width="25" height="25" src="https://img.icons8.com/ios/25/minus-2-math.png" alt="minus-2-math"/>
+                  <img onClick={handleCountMinus} width="25" height="25" src="https://img.icons8.com/ios/25/minus-2-math.png" alt="minus-2-math" />
                   <h2>{count1}</h2>
-                  <img onClick={handleCountPlus} width="25" height="25" src="https://img.icons8.com/ios/25/plus-2-math.png" alt="plus-2-math"/>
+                  <img onClick={handleCountPlus} width="25" height="25" src="https://img.icons8.com/ios/25/plus-2-math.png" alt="plus-2-math" />
                 </div>
               </div>
               <div className="countContainer2">
                 <h2>Children</h2>
                 <p>Ages 2-12</p>
                 <div className="count2">
-                  <img onClick={handleCountMinus2} width="25" height="25" src="https://img.icons8.com/ios/25/minus-2-math.png" alt="minus-2-math"/>
+                  <img onClick={handleCountMinus2} width="25" height="25" src="https://img.icons8.com/ios/25/minus-2-math.png" alt="minus-2-math" />
                   <h2>{count2}</h2>
-                  <img onClick={handleCountPlus2} width="25" height="25" src="https://img.icons8.com/ios/25/plus-2-math.png" alt="plus-2-math"/>
+                  <img onClick={handleCountPlus2} width="25" height="25" src="https://img.icons8.com/ios/25/plus-2-math.png" alt="plus-2-math" />
                 </div>
               </div>
             </div>
             <div className="description"></div>
           </div>
         </section>
-        <div onClick={closeModal} className="opacity"></div>
+        <div onClick={closeModalV2} className="opacity"></div>
       </nav>
     </>
   );
