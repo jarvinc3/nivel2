@@ -88,12 +88,12 @@
          border-radius: 20px;
      }
 
-     label {
+     :is(label) {
          font-size: 14px;
          display: block !important;
      }
 
-     button {
+     :is(button) {
          width: 55px;
          border-style: none;
          border-radius: 0;
@@ -208,6 +208,14 @@
      .dpNone {
          display: none;
      }
+
+     .location {
+        width: 95% !important;
+    }
+
+    .addGuest {
+        width: 95% !important;
+    }
  }
 
  .descriptionContainer {
@@ -252,7 +260,7 @@
 
  .location {
      border-style: none;
-     width: 95%;
+     width: 77px;
  }
 
  label {
@@ -276,7 +284,7 @@
 
  .addGuest {
      border-style: none;
-     width: 95%;
+     width: 68px;
  }
 
  .addGuest[placeholder] {
