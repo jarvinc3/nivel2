@@ -33,6 +33,12 @@ function App() {
     );
   });
 
+  const newData = data.reduce((citiesObj, item) => {
+    citiesObj[item.city] = true;
+    return citiesObj;
+  }, {});
+  const uniqueCities = Object.keys(newData);
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false); 
@@ -41,7 +47,7 @@ function App() {
 
   return (
     <div className="principal">
-      <Nav onSearch={handleSearch} />
+      <Nav onSearch={handleSearch} uniqueCities={uniqueCities} />
       <Stays filteredData={filteredData} />
       {loading ? (
         <Loader />

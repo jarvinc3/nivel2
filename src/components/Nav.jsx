@@ -3,30 +3,27 @@ import PropTypes from "prop-types";
 
 Nav.propTypes = {
   onSearch: PropTypes.func.isRequired,
+  uniqueCities: PropTypes.array.isRequired,
 };
 
-function Nav({ onSearch }) {
-  const [Location, setLocation] = useState("");
-  const [Guests, setGuests] = useState("");
+function Nav({ onSearch, uniqueCities }) {
+  const [location, setLocation] = useState("Helsinki");
+  const [guests, setGuests] = useState("");
   const [border1, setBorder1] = useState();
   const [border2, setBorder2] = useState();
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   const [error, setError] = useState(null);
 
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
-  };
-
   const handleGuestsChange = (event) => {
     setGuests(event.target.value);
   };
 
   const handleSearch = () => {
-    if (Location === "" || Guests === "") {
+    if (location === "" || guests === "") {
       setError(true);
     } else {
-      onSearch(Location, Guests);
+      onSearch(location, guests);
       setError(false);
     }
   };
@@ -37,7 +34,7 @@ function Nav({ onSearch }) {
   }
 
   const closeModal = () => {
-    if (Location === "" || Guests === "") {
+    if (location === "" || guests === "") {
       setError(true);
     } else {
       const modal = document.getElementById("navbar");
@@ -77,6 +74,11 @@ function Nav({ onSearch }) {
     setCount2(count2 - 1);
   }
 
+  const handleCityClick = (event) => {
+    const city = event.target.getAttribute('data-city');
+    setLocation(city);
+  };
+
   return (
     <>
       <nav id="navbar" className="">
@@ -91,11 +93,12 @@ function Nav({ onSearch }) {
                 className="location"
                 id="location"
                 type="text"
-                placeholder=" Add city"
-                autoComplete="off" 
-                value={Location}
+                readOnly
+                placeholder={uniqueCities[0] + ", Finland"}
+                autoComplete="off"
+                value={`${location}, Finland`}
                 onClick={openModal}
-                onChange={handleLocationChange}
+                onChange={(e) => setLocation(e.target.value)}
               />
             </div>
             <div onClick={toggleBorder2} className={`inputContainer guestsContainer ${border2 ? 'border' : ''}`}>
@@ -105,8 +108,8 @@ function Nav({ onSearch }) {
                 id="guests"
                 type="text"
                 placeholder="Add guest"
-                autoComplete="off" 
-                value={Guests}
+                autoComplete="off"
+                value={`${guests}`}
                 onClick={openModal}
                 onChange={handleGuestsChange}
               />
@@ -122,32 +125,32 @@ function Nav({ onSearch }) {
                   Search
                 </span>
               </div>
+              <div className="buttonDiv filterDiv">
+                <button onClick={handleSearch}>
+                  <span className="material-symbols-outlined">
+                    tune
+                  </span>
+                </button>
+                <span  className="filter">
+                  Clean <br /> filters
+                </span>
+              </div>
             </div>
           </div>
           <div className={` ${error ? 'errorContent' : 'dpNone'}`}></div>
           <div className="descriptionContainer">
             <div className={`description ${border1 ? '' : 'show'}`}>
               <ul>
-                <li>
-                  <span className="material-symbols-outlined">location_on</span>
-                  <span>Helsinki, Finland</span>
-                </li>
-                <li>
-                  <span className="material-symbols-outlined">location_on</span>
-                  <span>Helsinki, Finland</span>
-                </li>
-                <li>
-                  <span className="material-symbols-outlined">location_on</span>
-                  <span>Helsinki, Finland</span>
-                </li>
-                <li>
-                  <span className="material-symbols-outlined">location_on</span>
-                  <span>Helsinki, Finland</span>
-                </li>
-                <li>
-                  <span className="material-symbols-outlined">location_on</span>
-                  <span>Helsinki, Finland</span>
-                </li>
+                {
+                  uniqueCities.map((city) => (
+                    <li key={city}>
+                      <span className="material-symbols-outlined">location_on</span>
+                      <div>
+                        <span onClick={handleCityClick} data-city={city} >{city} Finland</span>
+                      </div>
+                    </li>
+                  ))
+                }
               </ul>
             </div>
             <div className={`description coutContainer ${border2 ? '' : 'show'}`}>

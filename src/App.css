@@ -94,7 +94,7 @@
      }
 
      :is(button) {
-         width: 55px;
+         width: 48px;
          border-style: none;
          border-radius: 0;
          color: #ffffff;
@@ -117,6 +117,10 @@
      .search {
          cursor: pointer;
          display: block !important;
+     }
+
+     .filter{
+        font-size: 12px;
      }
 
      .descriptionContainer {
@@ -211,11 +215,24 @@
 
      .location {
         width: 95% !important;
+        padding: 0 !important;
+        text-align: left;
+    }
+
+    .location[placeholder] {
+        color: #050505;
+        font-weight: 300;
+        font-size: 14px;
+        font-family: 'Mulish', sans-serif;
     }
 
     .addGuest {
         width: 95% !important;
     }
+ }
+
+ .filterDiv{
+    display: none;
  }
 
  .descriptionContainer {
@@ -240,7 +257,7 @@
      justify-content: space-between;
      align-items: center;
      height: 55px;
-     width: 280px;
+     width: 315px;
      border-radius: 10px;
      border-color: #F2F2F2;
      box-shadow: 0px 2px 9px #F2F2F2;
@@ -252,6 +269,7 @@
      display: flex;
      align-items: center;
      justify-content: center;
+     gap: 3px;
  }
 
  .buttonContainer {
@@ -260,7 +278,17 @@
 
  .location {
      border-style: none;
-     width: 77px;
+     width: 115px;
+     padding: 0 15px 0 15px;
+     cursor: pointer;
+     text-align: center;
+ }
+
+ .location[placeholder] {
+     color: #000000;
+     font-weight: 500;
+     font-size: 15px;
+     font-family: 'Mulish', sans-serif;
  }
 
  label {
@@ -271,16 +299,10 @@
      display: none;
  }
 
- .location[placeholder] {
-     color: #050505;
-     font-size: 14px;
-     font-family: 'Mulish', sans-serif;
- }
 
  .location[type="text"]:focus {
      outline: none;
  }
-
 
  .addGuest {
      border-style: none;
