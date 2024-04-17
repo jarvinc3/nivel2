@@ -129,7 +129,7 @@
          width: 90%;
      }
 
-     ul {
+     :is(ul) {
          list-style: none;
          display: flex;
          gap: 35px;
@@ -137,7 +137,7 @@
          padding-top: 30px;
      }
 
-     li {
+     :is(li) {
          display: flex;
          align-items: center;
          gap: 10px;
